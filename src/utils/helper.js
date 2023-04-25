@@ -13,7 +13,7 @@ const helpers = {
       return splitText.join(" ") + "...";
     } else {
       return text;
-    }
+    } 
   },
   formatDate(date, format) {
     return dayjs(date).format(format);
@@ -148,7 +148,7 @@ const helpers = {
     if (error.response && error.response.data) {
       const errors = error.response.data.errors;
       const validationErrors = error.response.data.data?.errors;
-  
+
       this.displayErrors(errors);
       this.displayErrors(validationErrors);
     } else {
@@ -168,7 +168,7 @@ const helpers = {
       }
     }
   },
-  
+
   filterPrice(value) {
     const formatter = new Intl.NumberFormat('en-US', {
       style: 'currency',

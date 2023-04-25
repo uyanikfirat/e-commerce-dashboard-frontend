@@ -139,12 +139,18 @@ const edit = (id) => {
 const getItems = async () => {
   const res = await ProductCategory.get();
   items.value = res;
-  
+
 
 };
 
 const deleteFunc = async (id) => {
-
+  await ProductCategory.delete(id).then((response) => {
+    helper.showSuccess("Data deleted successfuly");
+    getItems();
+  })
+    .catch((error) => {
+      helper.showError(error);
+    });
 };
 
 const updatePagination = async (newData) => {
