@@ -140,6 +140,7 @@ import { ref, onBeforeMount } from "vue";
 import router from "@/router";
 import PaginationComponent from "@/components/table/Pagination.vue";
 import Discount from "@/api/discount";
+import { helper } from "@/utils/helper";
 const items = ref([]);
 
 const edit = (id) => {
@@ -153,7 +154,15 @@ const getItems = async () => {
   });
 };
 
-const deleteFunc = async (id) => {};
+
+const deleteFunc = async (id) => {
+  await Discount.delete(id).then((response) => {
+    helper.showSuccess('Data deleted succesfully');
+    getItems();
+  }).catch((error) => {
+    helper.showError(error)
+  });
+};
 
 const updatePagination = async (newData) => {
   items.value = newData;
