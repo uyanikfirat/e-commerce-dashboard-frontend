@@ -768,7 +768,7 @@
 import { ref, onBeforeMount } from "vue";
 import vSelect from "vue-select";
 import "vue-select/dist/vue-select.css";
-import ProductShipping from "@/api/productshipping";
+import Shipping from "@/api/shipping";
 import ProductCategory from "@/api/productcategory";
 import Discount from "@/api/discount";
 import ProductVariant from "@/api/productvariant";
@@ -843,7 +843,7 @@ const removeImage = (index) => {
 };
 
 const getShippings = () => {
-  ProductShipping.get().then((res) => {
+  Shipping.get().then((res) => {
     shippings.value = res;
   })
 };

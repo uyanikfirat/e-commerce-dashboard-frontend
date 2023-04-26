@@ -2,10 +2,10 @@ import {
   get, post, patch, _delete
 } from '@/api/Api';
 
-export default class ProductShipping {
+export default class Shipping {
 
   static async get() {
-    return get('/product-shipping');
+    return get('/shipping');
   }
 
   static async paginator(url) {
