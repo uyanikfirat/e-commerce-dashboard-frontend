@@ -16,8 +16,9 @@ export default class Product {
     return get(`/product/${id}`);
   }
 
-  static async create(data) {
-    return post('/product', data);
+  static async create(data, headers) {
+    console.log(data.get('images[]'));
+    return post('/product', data, headers);
   }
 
   static async update(data) {

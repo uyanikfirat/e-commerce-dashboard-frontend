@@ -828,13 +828,14 @@ const uploadImage = (input) => {
   if(input.target.files && input.target.files[0]) {
     const reader = new FileReader();
     reader.onload = (e) => {
+    const image = e.target.result;
     form.value.images.push({
-      image_url: e.target.result,
       file: input.target.files[0],
+      image_url: image,
       });
     };
     reader.readAsDataURL(input.target.files[0]);
-    console.log(form.value)
+
   }
 };
 
