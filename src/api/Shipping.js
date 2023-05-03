@@ -13,20 +13,20 @@ export default class Shipping {
   }
 
   static async find(id) {
-    return get(`/product-shipping/${id}`);
+    return get(`/shipping/${id}`);
   }
 
   static async create(data) {
-    return post('/product-shipping', data);
+    return post('/shipping', data);
   }
 
   static async update(data) {
     console.log(data)
-    return patch(`/product-shipping/${data.id}`, data);
+    return patch(`/shipping/${data.id}`, data);
   }
 
   static async delete(id) {
-    return _delete(`/product-shipping/${id}`);
+    return _delete(`/shipping/${id}`);
   }
 
 

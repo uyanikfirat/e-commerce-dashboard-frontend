@@ -773,6 +773,7 @@ import ProductCategory from "@/api/productcategory";
 import Discount from "@/api/discount";
 import ProductVariant from "@/api/productvariant";
 import Product from "@/api/Product";
+import router from "@/router";
 
 const form = ref({
   images: [],
@@ -820,6 +821,7 @@ const save = async () => {
   await Product.create(formData, {
     "Content-Type": "multipart/form-data",
   }).then((response) => {
+    router.push({ name: "product-list" });
     console.log(response)
   });
 }
@@ -840,24 +842,24 @@ const uploadImage = (input) => {
 };
 
 const removeImage = (index) => {
-  form.value.images.splice(index, 2);
+  form.value.images.splice(index, 1);
 };
 
 const getShippings = () => {
   Shipping.get().then((res) => {
-    shippings.value = res;
+    shippings.value = res.data;
   })
 };
 
 const getProductCategories = () => {
   ProductCategory.get().then((res) => {
-    product_categories.value = res;
+    product_categories.value = res.data;
   })
 };
 
 const getDiscounts = () => {
   Discount.get().then((res) => {
-    discounts.value = res;
+    discounts.value = res.data;
   })
 };
 

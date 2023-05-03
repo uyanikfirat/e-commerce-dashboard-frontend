@@ -57,13 +57,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in items" :key="index" class="intro-x">
+          <tr v-for="(item, index) in items.data" :key="index" class="intro-x">
             <td class="w-40">
               {{ item.id }}
             </td>
             <td class="w-40">
               <span v-if="item.images.length && item.images[0]">
                 <img class="w-8 h-8" :src="item.images[0].image_url" />
+              </span>
+              <span v-else>
+                <img class="w-8 h-8" src="https://placehold.co/50" />
               </span>
             </td>
             <td class="w-40">{{ item.name.substring(0, 20) }}...</td>
@@ -150,23 +153,30 @@ import { ref, onBeforeMount } from "vue";
 import router from "@/router";
 import Product from "@/api/product";
 import PaginationComponent from "@/components/table/Pagination.vue";
+import { helper } from "@/utils/helper";
+
+
 const items = ref([]);
-
-
 
 const edit = (id) => {
   router.push({ name: "product-edit", params: { id: id } });
 };
 
 const getItems = async () => {
-  // console.log(getItems)
+  console.log(items);
   const res = await Product.get();
-    items.value = res;
-
+  items.value = res;
 };
 
 const deleteFunc = async (id) => {
-
+  await Product.delete(id)
+    .then((response) => {
+      helper.showSuccess("Data deleted successfuly");
+      getItems();
+    })
+    .catch((error) => {
+      helper.showError(error);
+    });
 };
 
 const updatePagination = async (newData) => {
@@ -175,5 +185,6 @@ const updatePagination = async (newData) => {
 
 onBeforeMount(async () => {
   getItems();
+  deleteFunc();
 });
 </script>
