@@ -39,11 +39,11 @@ export const useSideMenuStore = defineStore("sideMenu", {
       "devider",
       {
         icon: "FileTextIcon",
-        title: "Product",
+        title: "Group",
         subMenu: [{
             icon: "",
-            pageName: "product-list",
-            title: "Product List",
+            pageName: "group-list",
+            title: "Group List",
           },
           {
             icon: "",

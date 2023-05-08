@@ -2,7 +2,7 @@ import {
   defineStore
 } from 'pinia';
 import router from '@/router';
-import AuthApi from '@/api/auth';
+import Auth from '@/api/auth';
 
 
 export const useAuthStore = defineStore({
@@ -20,7 +20,7 @@ export const useAuthStore = defineStore({
   actions: {
     async login(loginData) {
       try {
-        const response = await AuthApi.login(loginData);
+        const response = await Auth.login(loginData);
         this.setUserData(response)
         router.push(this.returnUrl || '/');
       } catch (error) {
@@ -29,7 +29,7 @@ export const useAuthStore = defineStore({
     },
     async register(registerData) {
       try {
-        const response = await AuthApi.register(registerData);
+        const response = await Auth.register(registerData);
         this.setUserData(response)
         router.push(this.returnUrl || '/');
       } catch (error) {
@@ -39,7 +39,7 @@ export const useAuthStore = defineStore({
 
     async logout() {
       try {
-        const response = await AuthApi.logout({
+        const response = await Auth.logout({
           user: this.user
         }).then(response => {
           this.clearUserData()

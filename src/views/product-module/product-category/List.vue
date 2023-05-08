@@ -55,7 +55,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in items" :key="index" class="intro-x">
+          <tr v-for="(item, index) in items.data" :key="index" class="intro-x">
             <td class="w-40">
               {{ item.id }}
             </td>

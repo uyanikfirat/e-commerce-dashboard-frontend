@@ -1,11 +1,11 @@
 <template>
-  <h2 class="mt-10 text-lg font-medium intro-y">Product List</h2>
+  <h2 class="mt-10 text-lg font-medium intro-y">Group List</h2>
   <div class="grid grid-cols-12 gap-6 mt-5">
     <div
       class="flex flex-wrap items-center col-span-12 mt-2 intro-y sm:flex-nowrap"
     >
       <button class="mr-2 shadow-md btn btn-primary">
-        <router-link :to="{ name: 'product-create' }">Create</router-link>
+        <router-link :to="{ name: 'group-create' }">Create</router-link>
       </button>
       <Dropdown>
         <DropdownToggle class="px-2 btn box">
@@ -185,6 +185,6 @@ const updatePagination = async (newData) => {
 
 onBeforeMount(async () => {
   getItems();
-  deleteFunc();
+
 });
 </script>

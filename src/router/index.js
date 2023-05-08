@@ -86,14 +86,14 @@ const routes = [
 
       //PRODUCT MENU
       {
-        path: "product",
-        name: "product-list",
-        component: () => import('@/views/product-module/product/List.vue'),
+        path: "group",
+        name: "group-list",
+        component: () => import('@/views/product-module/group/List.vue'),
       },
       {
-        path: "product/create",
-        name: "product-create",
-        component: () => import('@/views/product-module/product/Create.vue'),
+        path: "group/create",
+        name: "group-create",
+        component: () => import('@/views/product-module/group/Create.vue'),
       },
       {
         path: "product/edit/:id",

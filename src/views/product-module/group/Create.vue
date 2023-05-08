@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center mt-8 intro-y">
-    <h2 class="mr-auto text-lg font-medium">Add Product</h2>
+    <h2 class="mr-auto text-lg font-medium">Add Group</h2>
   </div>
   <div class="grid grid-cols-11 pb-20 mt-5 gap-x-6">
     <div class="col-span-11 intro-y 2xl:col-span-9">
@@ -12,7 +12,7 @@
           <div
             class="flex items-center pb-5 text-base font-medium border-b border-slate-200/60 dark:border-darkmode-400"
           >
-            <ChevronDownIcon class="w-4 h-4 mr-2" /> Upload Product
+            <ChevronDownIcon class="w-4 h-4 mr-2" /> Upload Group Image
           </div>
           <div class="mt-5">
             <div class="flex items-center text-slate-500">
@@ -34,7 +34,7 @@
               <div class="form-label w-full xl:w-64 xl:!mr-10">
                 <div class="text-left">
                   <div class="flex items-center">
-                    <div class="font-medium">Product Photos</div>
+                    <div class="font-medium">Group Photos</div>
                     <div
                       class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md"
                     >
@@ -48,9 +48,9 @@
                       700 x 700 pixels).
                     </div>
                     <div class="mt-2">
-                      Select product photos or drag and drop up to 5 photos at
+                      Select group photos or drag and drop up to 5 photos at
                       once here. Include min. 3 attractive photos to make the
-                      product more attractive to buyers.
+                      group more attractive to users.
                     </div>
                   </div>
                 </div>
@@ -112,7 +112,7 @@
           <div
             class="flex items-center pb-5 text-base font-medium border-b border-slate-200/60 dark:border-darkmode-400"
           >
-            <ChevronDownIcon class="w-4 h-4 mr-2" /> Product Information
+            <ChevronDownIcon class="w-4 h-4 mr-2" /> Group Information
           </div>
           <div class="mt-5">
             <div
@@ -121,7 +121,7 @@
               <div class="form-label xl:w-64 xl:!mr-10">
                 <div class="text-left">
                   <div class="flex items-center">
-                    <div class="font-medium">Product Name</div>
+                    <div class="font-medium">Group Name</div>
                     <div
                       class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md"
                     >
@@ -130,7 +130,7 @@
                   </div>
                   <div class="mt-3 text-xs leading-relaxed text-slate-500">
                     Include min. 40 characters to make it more attractive and
-                    easy for buyers to find, consisting of product type, brand,
+                    easy for users to find, consisting of group type, brand,
                     and information such as color, material, or type.
                   </div>
                 </div>
@@ -140,7 +140,7 @@
                   id="product-name"
                   type="text"
                   class="form-control"
-                  placeholder="Product name"
+                  placeholder="Group name"
                   v-model="form.name"
                 />
                 <div class="text-right form-help">Maximum character 0/70</div>
@@ -703,32 +703,32 @@
           <li
             class="pl-5 mb-4 font-medium border-l-2 border-primary dark:border-primary text-primary"
           >
-            <a href="">Upload Product</a>
+            <a href="">Upload Group Photos</a>
           </li>
           <li
             class="pl-5 mb-4 border-l-2 border-transparent dark:border-transparent"
           >
-            <a href="">Product Information</a>
+            <a href="">Group Information</a>
           </li>
           <li
             class="pl-5 mb-4 border-l-2 border-transparent dark:border-transparent"
           >
-            <a href="">Product Detail</a>
+            <a href="">Group Detail</a>
           </li>
           <li
             class="pl-5 mb-4 border-l-2 border-transparent dark:border-transparent"
           >
-            <a href="">Product Variant</a>
+            <a href="">Group Variant</a>
           </li>
           <li
             class="pl-5 mb-4 border-l-2 border-transparent dark:border-transparent"
           >
-            <a href="">Product Variant (Details)</a>
+            <a href="">Group Variant (Details)</a>
           </li>
           <li
             class="pl-5 mb-4 border-l-2 border-transparent dark:border-transparent"
           >
-            <a href="">Product Management</a>
+            <a href="">Group Management</a>
           </li>
           <li
             class="pl-5 mb-4 border-l-2 border-transparent dark:border-transparent"

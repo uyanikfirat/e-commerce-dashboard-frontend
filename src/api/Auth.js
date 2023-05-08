@@ -5,6 +5,7 @@ import {
 export default class Auth {
 
   static async login(data){
+    console.log(data)
     return post('/login', data)
   }
   static async register(data) {

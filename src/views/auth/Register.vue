@@ -54,14 +54,38 @@
                 type="text"
                 class="intro-x login__input form-control py-3 px-4 block"
                 placeholder="First Name"
-                v-model="form.first_name"
+                v-model="form.name"
               />
               <input
                 type="text"
                 class="intro-x login__input form-control py-3 px-4 block mt-4"
                 placeholder="Last Name"
-                v-model="form.last_name"
+                v-model="form.surname"
               />
+              <input
+                type="text"
+                class="intro-x login__input form-control py-3 px-4 block mt-4"
+                placeholder="Phone"
+                v-model="form.phone"
+              />
+              <div class="mt-4 border-bottom btn-group shadow-0" role="group">
+                <button type="button"
+                        class="btn btn-link me-1"
+                        :class="{ active: form.gender === 'male' }"
+                        data-mdb-color="dark"
+                        @click="form.gender = 'male'"
+                >
+                  Male
+                </button>
+                <button type="button"
+                        class="btn btn-link me-1"
+                        :class="{ active: form.gender === 'female' }"
+                        data-mdb-color="dark"
+                        @click="form.gender = 'female'"
+                >
+                  Female
+                </button>
+              </div>
               <input
                 type="email"
                 class="intro-x login__input form-control py-3 px-4 block mt-4"
@@ -140,8 +164,10 @@ import { useAuthStore } from "@/stores";
 const authStore = useAuthStore();
 
 const form = ref({
-  first_name: "firat",
-  last_name: "uyanik",
+  name: "firat",
+  surname: "uyanik",
+  phone: "5075155545",
+  gender: "true",
   email: "uyanikfirat@gmail.com",
   password: "123456",
   password_confirmation: "123456",
@@ -157,3 +183,18 @@ onMounted(() => {
   dom("body").removeClass("main").removeClass("error-page").addClass("login");
 });
 </script>
+
+<style>
+.btn-link.active {
+  border: 4px solid #D2D8E8;
+  border-radius: 8px;
+  box-shadow: none;
+  transition: border 0.22s ease-in-out;
+}
+
+
+
+
+
+
+</style>
